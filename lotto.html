@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>樂透開獎</h1>
+    <button>開獎</button>
+    <script>
+        function randInt(start, end, count = 6) {
+            let looto = [];
+            if (count <= 0) {
+                return "count cant not 0"
+            }
+            /*
+            while (true) {
+                let x = Math.floor(Math.random() * (end - start + 1)) + start;
+                if (!looto.includes(x)) {
+                    looto.push(x)
+                }
+                if (looto.length == count) {
+                    break;
+                }
+            }
+            */
+            do {
+                let x = Math.floor(Math.random() * (end - start + 1)) + start;
+                if (!looto.includes(x)) {
+                    looto.push(x)
+                }
+            } while (looto.length != count)
+
+            return looto;
+        }
+
+        lootoNumber = randInt(1, 49);
+        document.write(`<h2 style="color:pink">${lootoNumber.join(",")}</h2>`)
+        console.log(lootoNumber);
+
+
+
+
+    </script>
+</body>
+
+</html>
