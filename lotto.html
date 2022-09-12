@@ -38,10 +38,29 @@
             return looto;
         }
 
-        lootoNumber = randInt(1, 49);
-        document.write(`<h2 style="color:pink">${lootoNumber.join(",")}</h2>`)
-        console.log(lootoNumber);
+        let lotto = [];
 
+        let counter = prompt("請輸入預測次數")
+
+        for (let i = 0; i < counter; i++) {
+            lottoNumber = randInt(1, 49, 6);
+            lotto.push(lottoNumber);
+        }
+
+        console.log(lotto);
+        let tempStr = "<ul>"
+
+        for (let i = 0; i < lotto.length; i++) {
+            console.log(lotto[i].join(","));
+            //tempStr += "<li>" + lotto[i].join(",") + "</li>"
+            tempStr += `<li>${lotto[i].join(",")}</li>`
+            //for (let j = 0; j < lotto[i].length; j++)
+            //    console.log(lotto[i][j]);
+            //}
+        }
+        tempStr += "</ul>"
+
+        document.write(tempStr);
 
 
 
