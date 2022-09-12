@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>樂透號碼預測</title>
 </head>
 
 <body>
     <h1>樂透開獎</h1>
     <button>開獎</button>
     <script>
+
+        //const compare = (a, b) => a - b;
+
         function randInt(start, end, count = 6) {
             let looto = [];
             if (count <= 0) {
@@ -33,7 +36,9 @@
                 if (!looto.includes(x)) {
                     looto.push(x)
                 }
-            } while (looto.length != count)
+            } while (looto.length != count);
+
+            lotto.sort((a, b) => a - b);
 
             return looto;
         }
